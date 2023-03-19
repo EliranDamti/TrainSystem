@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="TrainSystem.View.AddTrainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrainSystem.View"
+             xmlns:vm="clr-namespace:TrainSystem.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Trains}"
+                  AutoGenerateColumns="false"
+                  CanUserAddRows="False"
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Crew1}"
+                                    Width="*" 
+                                    Header="Crew1"/>
+                <DataGridTextColumn Binding="{Binding Crew2}"
+                                    Width="*" 
+                                    Header="Crew2"/>
+                <DataGridTextColumn Binding="{Binding Type}"
+                                    Width="*"
+                                    Header="Type"/>
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Place Order"
+                                    Command="{Binding DataContext.Stam, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding}"
+                                    Margin="5" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
