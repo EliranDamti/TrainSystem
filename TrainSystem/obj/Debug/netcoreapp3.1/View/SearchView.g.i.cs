@@ -61,7 +61,7 @@ namespace TrainSystem.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TrainSystem;component/view/searchview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrainSystem;V1.0.0.0;component/view/searchview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\SearchView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
